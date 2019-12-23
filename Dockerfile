@@ -30,3 +30,8 @@ CMD ng serve --host 0.0.0.0 --port 8081
 
 #For connecting to the bash console:
 #		docker run -it -p 8081:8081 --rm --name my_running_app movieapp_image  bash
+#		docker run -it -v $(pwd):/var/www -p 8081:8081 --rm --name my_running_app movieapp_image  bash
+
+
+# RUN This command in the project
+# 		echo "export const environment = {  MOVIE_DB_KEY: 'YOU_API_KEY_HERE'};" >> src/environments/.env.ts 

@@ -46,3 +46,5 @@ testem.log
 Thumbs.db
 .npm/*
 .vscode-server/*
+.env.ts
+.cache/*
