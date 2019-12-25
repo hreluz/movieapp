@@ -7,4 +7,5 @@ export class MovieModel {
     popularity:number;
     genre_ids: [];
     genres: [];
+    backdrop_path:string;
 }

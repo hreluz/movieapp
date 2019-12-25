@@ -8,13 +8,15 @@ import { HttpModule } from '@angular/http';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { MovieImagePipe } from './pipes/movie-image.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SearchComponent,
-    NavbarComponent
+    NavbarComponent,
+    MovieImagePipe
   ],
   imports: [
     BrowserModule,
