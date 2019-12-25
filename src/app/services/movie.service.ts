@@ -16,7 +16,6 @@ export class MovieService {
    }
 
   getPopulars() {
-    console.log(this.apiKey);
     let url = `${ this.urlMoviedb }/discover/movie?sort_by=popularity.desc&api_key=${ this.apiKey }`;
     
     return this.http.get( url )
@@ -28,6 +27,15 @@ export class MovieService {
   
   getFeaturedMovies() {     
     let url = `${ this.urlMoviedb}/movie/now_playing?api_key=${ this.apiKey }`;
+    
+    return this.http.get( url )
+                    .pipe(
+                      map( (res:any) => res.json())
+                    );
+  }
+
+  getKidsPopularMovies() {
+    let url = `${ this.urlMoviedb}/discover/movie?sort_by=popularity.desc&with_genres=16&api_key=${ this.apiKey }`;
     
     return this.http.get( url )
                     .pipe(

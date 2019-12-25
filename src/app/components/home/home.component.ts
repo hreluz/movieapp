@@ -9,6 +9,8 @@ import { MovieModel } from 'src/app/models/movie';
 })
 export class HomeComponent implements OnInit {
   featuredMovies: MovieModel[] = [];
+  popularMovies: MovieModel[] = [];
+  kidsPopularMovies: MovieModel[] = [];
 
   constructor(public _ms:MovieService) {
     this._ms.getFeaturedMovies()
@@ -17,6 +19,24 @@ export class HomeComponent implements OnInit {
             var movie = new MovieModel();
             movie = data.results[d];
             this.featuredMovies.push(movie);
+          }
+    });
+
+    this._ms.getPopulars()
+        .subscribe(data => {
+          for(var d in data.results ){
+            var movie = new MovieModel();
+            movie = data.results[d];
+            this.popularMovies.push(movie);
+          }
+    });
+
+    this._ms.getKidsPopularMovies()
+        .subscribe(data => {
+          for(var d in data.results ){
+            var movie = new MovieModel();
+            movie = data.results[d];
+            this.kidsPopularMovies.push(movie);
           }
     });
   }

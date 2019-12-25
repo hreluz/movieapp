@@ -1,0 +1,15 @@
+<div class="mt-5">
+  <h3>{{ title }}</h3>
+</div>
+
+<div class="row">
+  <div *ngFor="let m of movies" class="col-sm-3 mt-3">
+    <div class="card">
+        <img src="{{ m | movieImage }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ m.title }}</h5>
+          <a href="" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+  </div>
+</div>
