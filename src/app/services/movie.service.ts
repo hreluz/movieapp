@@ -25,4 +25,13 @@ export class MovieService {
                     );
 
   }
+  
+  getFeaturedMovies() {     
+    let url = `${ this.urlMoviedb}/movie/now_playing?api_key=${ this.apiKey }`;
+    
+    return this.http.get( url )
+                    .pipe(
+                      map( (res:any) => res.json())
+                    );
+  }
 }

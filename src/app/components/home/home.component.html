@@ -1,3 +1,15 @@
-<p>
-  home works!
-</p>
+<div class="mt-5">
+  <h3>Featured Movies </h3>
+</div>
+
+<div class="row" *ngIf="featuredMovies">
+  <div *ngFor="let m of featuredMovies|slice:0:4" class="col-sm-3 mt-3">
+    <div class="card">
+        <img src="https://image.tmdb.org/t/p/w500{{ m.poster_path }}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ m.title }}</h5>
+          <a href="" class="btn btn-primary">See more</a>
+        </div>
+      </div>
+  </div>
+</div>
