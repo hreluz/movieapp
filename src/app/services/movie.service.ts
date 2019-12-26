@@ -51,4 +51,13 @@ export class MovieService {
                       map( (res:any) => res.json())
                     );
   }
+  searchMovies(text:string) {
+    let url = `${ this.urlMoviedb}/search/movie?query=${text}&sort_by=popularity.desc&api_key=${ this.apiKey }`;
+    
+    return this.http.get( url )
+                    .pipe(
+                      map( (res:any) => res.json())
+                    );
+
+  }
 }

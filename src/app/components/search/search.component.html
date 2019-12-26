@@ -1,3 +1,6 @@
-<p>
-  search works!
-</p>
+<div class="input-group mt-5">
+  <input type="text" class="form-control" [(ngModel)]="word" (keyup.enter)="search()" placeholder="Search...">
+</div>
+
+<app-movies [movies]="movies"></app-movies>
+<h1 *ngIf="searchNotFound">{{ searchNotFound }}</h1>
