@@ -8,7 +8,7 @@
         <img src="{{ m | movieImage }}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ m.title }}</h5>
-          <a href="" class="btn btn-primary">See more</a>
+          <a [routerLink]="['/movie', m.id]" class="btn btn-primary">See more</a>
         </div>
       </div>
   </div>

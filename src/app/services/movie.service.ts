@@ -42,4 +42,13 @@ export class MovieService {
                       map( (res:any) => res.json())
                     );
   }
+
+  getMovie(id){
+    let url = `${ this.urlMoviedb}/movie/${id}?api_key=${ this.apiKey }`;
+    
+    return this.http.get( url )
+                    .pipe(
+                      map( (res:any) => res.json())
+                    );
+  }
 }
